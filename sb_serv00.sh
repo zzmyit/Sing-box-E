@@ -13,7 +13,7 @@ reading() { read -p "$(red "$1")" "$2"; }
 export LC_ALL=C
 HOSTNAME=$(hostname)
 USERNAME=$(whoami | tr '[:upper:]' '[:lower:]')
-export UUID=${UUID:-$(uuidgen -r)}  
+export UUID=${UUID:-'277cc408-95e1-40f2-9caf-caa739702269'}  
 export NEZHA_SERVER=${NEZHA_SERVER:-''}  # v1哪吒形式：nezha.abc.com:8008,v0哪吒形式：nezha.abc.com
 export NEZHA_PORT=${NEZHA_PORT:-''}      # v1哪吒不需要此变量
 export NEZHA_KEY=${NEZHA_KEY:-''}        # v1的NZ_CLIENT_SECRET或v0的agent密钥
@@ -348,8 +348,8 @@ cat > config.json <<EOF
   ],
 EOF
 
-# 如果是s14/s15/s16,google和youtube相关的服务走warp出站
-if [[ "$HOSTNAME" =~ s14|s15|s16 ]]; then
+# 如果是s14/s15,google和youtube相关的服务走warp出站
+if [[ "$HOSTNAME" =~ s14|s15 ]]; then
   cat >> config.json <<EOF
   "outbounds": [
     {
