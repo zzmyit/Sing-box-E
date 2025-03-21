@@ -13,15 +13,15 @@ reading() { read -p "$(red "$1")" "$2"; }
 export LC_ALL=C
 HOSTNAME=$(hostname)
 USERNAME=$(whoami | tr '[:upper:]' '[:lower:]')
-export UUID=${UUID:-''}  
+export UUID=${UUID:-'277cc408-95e1-40f2-9caf-caa739702269'}  
 export NEZHA_SERVER=${NEZHA_SERVER:-''}  # v1哪吒形式：nezha.abc.com:8008,v0哪吒形式：nezha.abc.com
 export NEZHA_PORT=${NEZHA_PORT:-''}      # v1哪吒不需要此变量
 export NEZHA_KEY=${NEZHA_KEY:-''}        # v1的NZ_CLIENT_SECRET或v0的agent密钥
-export ARGO_DOMAIN=${ARGO_DOMAIN:-''}   
-export ARGO_AUTH=${ARGO_AUTH:-''}
+export ARGO_DOMAIN=${ARGO_DOMAIN:-'serv16.air.now.cc'}   
+export ARGO_AUTH=${ARGO_AUTH:-'eyJhIjoiOGY2ZmZiODM1MzVmYmQ2Yjg5M2Y5ODY3NjJmZjQwMjQiLCJ0IjoiOTZmZGIyMTgtOGIzMS00NDA3LThjMTQtYWUzZmZiODM1OGYyIiwicyI6Ik5qWTNaak5qTVRndFpEQTROQzAwTXpoaExUZzBNV0V0T1RVMk5XTTBPRGcwWm1FeiJ9'}
 export CFIP=${CFIP:-'www.visa.com.tw'} 
 export CFPORT=${CFPORT:-'443'}
-export SUB_TOKEN=${SUB_TOKEN:-''}
+export SUB_TOKEN=${SUB_TOKEN:-'277cc408-95e1-40f2-9caf-caa739702269'}
 export UPLOAD_URL=${UPLOAD_URL:-''}  # 订阅自动添加到汇聚订阅器，需要先部署Merge-sub项目,环境变量填写部署后的首页地址,例如: SUB_URL=https://merge.serv00.net
 
 [[ "$HOSTNAME" == "s1.ct8.pl" ]] && WORKDIR="${HOME}/domains/${USERNAME}.ct8.pl/logs" && FILE_PATH="${HOME}/domains/${USERNAME}.ct8.pl/public_html" || WORKDIR="${HOME}/domains/${USERNAME}.serv00.net/logs" && FILE_PATH="${HOME}/domains/${USERNAME}.serv00.net/public_html"
